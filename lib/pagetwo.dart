@@ -46,6 +46,18 @@ class Album {
   }
 }
 
+class LocalText {
+  String text = "origin";
+
+  String getText() {
+    return text;
+  }
+
+  void setText(String input) {
+    text = input;
+  }
+}
+
 class FavoriteWidget extends StatefulWidget {
   @override
   _FavoriteWidgetState createState() => _FavoriteWidgetState();
@@ -97,6 +109,8 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 }
 
 class _PageTwoState extends State<PageTwo> {
+  LocalText lt = new LocalText();
+
   Widget titleSection = Container(
     padding: const EdgeInsets.all(32),
     child: Row(
@@ -158,7 +172,7 @@ class _PageTwoState extends State<PageTwo> {
         ),
         titleSection,
         textSection,
-        Text(globals.sampleText),
+        Text(lt.getText()),
         // Bouton retour
         Center(
             child: Column(children: [
